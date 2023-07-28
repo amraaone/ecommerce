@@ -13,7 +13,7 @@ const Page: FunctionComponent<PageProps> = () => {
     if (!isOpen) onOpen()
   }, [isOpen, onOpen])
 
-  return <div>rootPage</div>
+  return null
 }
 
 export default Page
