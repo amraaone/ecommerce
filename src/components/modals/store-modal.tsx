@@ -16,14 +16,16 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
-import { useState } from "react"
+import { FunctionComponent, useState } from "react"
 import { toast } from "react-hot-toast"
 
 const formSchema = z.object({
   name: z.string().min(1),
 })
 
-export const StoreModal = () => {
+interface StoreModalProps {}
+
+const StoreModal: FunctionComponent<StoreModalProps> = () => {
   const storeModal = useStoreModal()
   const [loading, setLoading] = useState(false)
   const form = useForm<z.infer<typeof formSchema>>({
@@ -96,3 +98,5 @@ export const StoreModal = () => {
     </Modal>
   )
 }
+
+export default StoreModal
