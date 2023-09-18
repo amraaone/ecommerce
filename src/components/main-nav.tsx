@@ -21,7 +21,7 @@ const MainNav: FunctionComponent<MainNavProps> = ({ className, ...props }) => {
     {
       href: `/${params.storeId}/billboards`,
       label: "Billboards",
-      active: pathname === `/${params.storeId}/billboard`,
+      active: pathname === `/${params.storeId}/billboards`,
     },
     {
       href: `/${params.storeId}/settings`,
