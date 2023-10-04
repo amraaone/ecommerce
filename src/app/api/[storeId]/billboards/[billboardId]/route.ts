@@ -36,6 +36,9 @@ export async function PATCH(
     if (!imageUrl)
       return new NextResponse("Image URL is required", { status: 400 })
 
+    if (!params.storeId)
+      return new NextResponse("Store Id is required", { status: 400 })
+
     if (!params.billboardId)
       return new NextResponse("Billboard id is required", { status: 400 })
 
@@ -44,9 +47,6 @@ export async function PATCH(
     })
 
     if (!storeByUserId) return new NextResponse("Unauthorized", { status: 403 })
-
-    if (!params.storeId)
-      return new NextResponse("Store Id is required", { status: 400 })
 
     const billboard = await prismadb.billboard.updateMany({
       where: { id: params.billboardId },
