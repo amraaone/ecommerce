@@ -107,8 +107,6 @@ export async function GET(
       },
     })
 
-    console.log(products, "lslsl")
-
     return NextResponse.json(products)
   } catch (error) {
     console.log("[PRODUCTS_GET]", error)
